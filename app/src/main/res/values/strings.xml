@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppMarvel</string>
+    <string name="busca_personagem">Nome do Personagem</string>
+    <string name="botao_busca">Buscar Personagem</string>
+</resources>
