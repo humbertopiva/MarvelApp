@@ -9,8 +9,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private EditText txtNome;
-    public static final String NOME = "com.example.appfilmes.nome";
-
+    public static final String NOME = "com.example.marvelapp.nome";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +23,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListarPersonagensActivity.class);
         intent.putExtra(NOME, nome);
         startActivity(intent);
-
     }
 }
