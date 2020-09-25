@@ -1,8 +1,9 @@
 package com.example.marvelapp.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Personagem {
+public class Personagem implements Serializable, Comparable<Personagem> {
     private int id;
     private String nome;
     private String descricao;
@@ -10,6 +11,7 @@ public class Personagem {
     private Date dataLancamento;
     private String posterPath;
     private String backdropPath;
+    private String diretor;
     private Genero genero;
 
     public int getId() {
@@ -24,8 +26,8 @@ public class Personagem {
         return nome;
     }
 
-    public void setNome(String titulo) {
-        this.nome = titulo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -68,6 +70,13 @@ public class Personagem {
         this.backdropPath = backdropPath;
     }
 
+    public String getDiretor() {
+        return diretor;
+    }
+
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
+    }
 
     public Genero getGenero() {
         return genero;
@@ -79,15 +88,21 @@ public class Personagem {
 
     @Override
     public String toString() {
-        return "Filme{" +
+        return "Personagem{" +
                 "id=" + id +
-                ", titulo='" + nome + '\'' +
+                ", nome='" + nome + '\'' +
                 ", descricao='" + descricao + '\'' +
                 ", popularidade=" + popularidade +
                 ", dataLancamento=" + dataLancamento +
                 ", posterPath='" + posterPath + '\'' +
                 ", backdropPath='" + backdropPath + '\'' +
+                ", diretor='" + diretor + '\'' +
                 ", genero=" + genero +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Personagem personagem) {
+        return getNome().compareTo(personagem.getNome());
     }
 }

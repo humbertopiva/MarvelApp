@@ -4,24 +4,29 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Dados {
 
     public static Personagem[] buscaPersonagens(String chave){
         ArrayList<Personagem> lista = criaPersonagem();
+        ArrayList<Personagem> filtro;
+        Personagem[] personagens;
         if(chave == null || chave.length() == 0){
-            return lista.toArray(new Personagem[0]);
+            filtro = lista;
         } else {
-            ArrayList<Personagem> filtro = new ArrayList<>();
-            for(Personagem personagem: lista){
+            filtro = new ArrayList<>();
+            for (Personagem personagem : lista) {
                 String nome = personagem.getNome();
-                if(nome.toUpperCase().contains(chave.toUpperCase())){
+                if (nome.toUpperCase().contains(chave.toUpperCase())) {
                     filtro.add(personagem);
                 }
             }
-            return filtro.toArray(new Personagem[0]);
         }
+        personagens = filtro.toArray(new Personagem[0]);
+        Arrays.sort(personagens);
+        return personagens;
     }
 
     public static ArrayList<String> geraListaPersonagens(){

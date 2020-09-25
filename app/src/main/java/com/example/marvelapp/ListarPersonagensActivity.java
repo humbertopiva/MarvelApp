@@ -16,7 +16,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class ListarPersonagensActivity extends AppCompatActivity {
-    public static final String DESCRICAO = "com.example.marvelapp.descricao";
+    public static final String PERSONAGEM = "com.example.marvelapp.personagem";
     Personagem[] lista;
     Activity atividade;
     @Override
@@ -29,6 +29,7 @@ public class ListarPersonagensActivity extends AppCompatActivity {
         lista = Dados.buscaPersonagens(chave);
         BaseAdapter adapter = new PersonagemAdapter(this, lista);
 
+
         ListView listView = (ListView) findViewById(R.id.listview);
         listView.setAdapter(adapter);
 
@@ -36,7 +37,7 @@ public class ListarPersonagensActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent1 = new Intent(atividade, DetalhePersonagemActivity.class);
-                intent1.putExtra(DESCRICAO, lista[i].getNome());
+                intent1.putExtra(PERSONAGEM, lista[i]);
                 startActivity(intent1);
             }
         });

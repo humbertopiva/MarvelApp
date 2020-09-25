@@ -5,12 +5,14 @@ import android.widget.TextView;
 
 public class ViewHolder {
     private ImageView posterPersonagem;
-    private TextView nomePersonagem, DetalhePersonagem;
+    private TextView nomePersonagem, detalhe1Personagem, detalhe2Personagem, detalhe3Personagem;
 
-    public ViewHolder(ImageView posterPersonagem, TextView nomePersonagem, TextView detalhePersonagem) {
+    public ViewHolder(ImageView posterPersonagem, TextView nomePersonagem, TextView detalhe1Personagem, TextView detalhe2Personagem, TextView detalhe3Personagem) {
         this.posterPersonagem = posterPersonagem;
         this.nomePersonagem = nomePersonagem;
-        DetalhePersonagem = detalhePersonagem;
+        this.detalhe1Personagem = detalhe1Personagem;
+        this.detalhe2Personagem = detalhe2Personagem;
+        this.detalhe3Personagem = detalhe3Personagem;
     }
 
     public ImageView getPosterPersonagem() {
@@ -29,11 +31,19 @@ public class ViewHolder {
         this.nomePersonagem = nomePersonagem;
     }
 
-    public TextView getDetalhePersonagem() {
-        return DetalhePersonagem;
+    public TextView getDetalhe1Personagem() { return detalhe1Personagem; }
+
+    public void setDetalhe1Personagem(TextView detalhe1Personagem) { this.detalhe1Personagem = detalhe1Personagem; }
+
+    public TextView getDetalhe2Personagem() {
+        return detalhe2Personagem;
     }
 
-    public void setDetalhePersonagem(TextView detalhePersonagem) {
-        DetalhePersonagem = detalhePersonagem;
+    public void setDetalhe2Personagem(TextView detalhe2Personagem) { this.detalhe2Personagem = detalhe2Personagem; }
+
+    public TextView getDetalhe3Personagem() {
+        return detalhe3Personagem;
     }
+
+    public void setDetalhe3Personagem(TextView detalhe3Personagem) { this.detalhe3Personagem = detalhe3Personagem; }
 }
