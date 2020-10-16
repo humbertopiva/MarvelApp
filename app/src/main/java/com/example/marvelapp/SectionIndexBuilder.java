@@ -1,10 +1,10 @@
 package com.example.marvelapp;
 
+import com.example.marvelapp.model.Personagem;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.TreeSet;
-
-import com.example.marvelapp.model.Personagem;
 
 public class SectionIndexBuilder {
 
@@ -14,7 +14,7 @@ public class SectionIndexBuilder {
 
         if(personagens != null) {
             for (Personagem personagem : personagens) {
-                String letter = personagem.getNome().substring(0, 1);
+                String letter = personagem.getTitulo().substring(0, 1);
                 if (!used.contains(letter)) {
                     results.add(letter);
                 }
@@ -31,7 +31,7 @@ public class SectionIndexBuilder {
 
         if(personagens != null){
             for(int i = 0; i < personagens.length; i++){
-                String letter = personagens[i].getNome().substring(0,1);
+                String letter = personagens[i].getTitulo().substring(0,1);
                 if(!used.contains(letter)){
                     section++;
                     used.add(letter);
@@ -49,7 +49,7 @@ public class SectionIndexBuilder {
 
         if(personagens != null){
             for(int i = 0; i < personagens.length; i++){
-                String letter = personagens[i].getNome().substring(0,1);
+                String letter = personagens[i].getTitulo().substring(0,1);
                 if(!used.contains(letter)){
                     section++;
                     used.add(letter);

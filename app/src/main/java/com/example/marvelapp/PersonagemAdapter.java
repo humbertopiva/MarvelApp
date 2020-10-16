@@ -11,6 +11,7 @@ import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import com.example.marvelapp.model.Personagem;
+import com.example.marvelapp.model.Poster;
 
 import java.util.Hashtable;
 
@@ -21,7 +22,7 @@ public class PersonagemAdapter extends BaseAdapter implements SectionIndexer {
     Hashtable<Integer, Integer> positionForSectionMap;
     Hashtable<Integer, Integer> sectionForPositionMap;
 
-    public PersonagemAdapter(Context context, Personagem[] personagens) {
+    public PersonagemAdapter(Context context, Personagem[] personagens, Poster[] posters) {
         this.personagens = personagens;
         this.context = context;
         sectionHeaders = SectionIndexBuilder.buildSectionHeaders(personagens);
@@ -68,7 +69,7 @@ public class PersonagemAdapter extends BaseAdapter implements SectionIndexer {
                         personagens[i].getPosterPath().length()-4).toLowerCase());
         ViewHolder viewHolder = (ViewHolder)view.getTag();
         viewHolder.getPosterPersonagem().setImageDrawable(drawable);
-        viewHolder.getNomePersonagem().setText(personagens[i].getNome());
+        viewHolder.getNomePersonagem().setText(personagens[i].getTitulo());
         //Locale locale = new Locale("pt", "BR");
         String lbl_gen = context.getResources().getString(R.string.lbl_genero);
         String lbl_lanc = context.getResources().getString(R.string.lbl_lancamento);
