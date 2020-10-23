@@ -7,6 +7,7 @@ public class Personagem implements Serializable, Comparable<Personagem> {
     private String titulo;
     private String descricao;
     private String posterPath;
+    private String backdropPath;
 
     public int getId() {
         return id;
@@ -38,6 +39,14 @@ public class Personagem implements Serializable, Comparable<Personagem> {
 
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
+    }
+
+    public String getBackdropPath() {
+        return backdropPath;
+    }
+
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
     }
 
     @Override

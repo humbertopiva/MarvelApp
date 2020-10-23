@@ -27,6 +27,7 @@ public class DetalhePersonagemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_detalhe_personagem);
         titulo = (TextView)findViewById(R.id.txt_titulo);
         descricao = (TextView)findViewById(R.id.txt_descricao);
@@ -34,9 +35,11 @@ public class DetalhePersonagemActivity extends AppCompatActivity {
         personagem = (Personagem)intent.getSerializableExtra(ListarPersonagensActivity.PERSONAGEM);
         titulo.setText(personagem.getTitulo());
         descricao.setText(personagem.getDescricao());
-        progressBar = (ProgressBar)findViewById(R.id.progressBarDetalhe);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBarDetalhe);
         if (PersonagemNetwork.isConnected(this)) {
             progressBar.setVisibility(View.VISIBLE);
+            new DownloadBackdrop().execute(imgUrl + personagem.getBackdropPath());
         } else {
             String msg = this.getResources().getString(R.string.erro_rede);
             Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
