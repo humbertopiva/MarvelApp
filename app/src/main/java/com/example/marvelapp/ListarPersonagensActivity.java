@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.marvelapp.View.MainActivity;
 import com.example.marvelapp.model.Dados;
 import com.example.marvelapp.model.Personagem;
 import com.example.marvelapp.model.Poster;

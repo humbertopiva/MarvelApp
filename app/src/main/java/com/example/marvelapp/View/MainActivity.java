@@ -1,4 +1,4 @@
-package com.example.marvelapp;
+package com.example.marvelapp.View;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.marvelapp.ListarPersonagensActivity;
+import com.example.marvelapp.R;
 import com.example.marvelapp.model.Dados;
 import com.example.marvelapp.model.Personagem;
 import com.example.marvelapp.model.PersonagemNetwork;
